@@ -1,0 +1,15 @@
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# Logs / caches
+*.log
+npm-debug.log*
+.npm/
+coverage/
+
+# System files
+.DS_Store
+Thumbs.db
