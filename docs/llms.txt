@@ -1,0 +1,20 @@
+# @three-ws/intel-mcp
+
+> three.ws market intelligence from any AI agent — smart-money scoring, wallet intel, signal feeds, KOL leaderboards/trades, and the copy-trade Smart Money directory. Read-only over the live public API. No key, no signer, no payment.
+
+@three-ws/intel-mcp is a Model Context Protocol server from three.ws. Install: `npx -y @three-ws/intel-mcp`.
+
+## Docs
+
+- [README](https://github.com/nirholas/intel-mcp/blob/main/README.md): install, configuration, full reference
+- [Documentation site](https://nirholas.github.io/intel-mcp/): the README as a web page
+- [Full text for LLMs](https://nirholas.github.io/intel-mcp/llms-full.txt): README inlined
+- [AGENTS.md](https://github.com/nirholas/intel-mcp/blob/main/AGENTS.md): guidance for coding agents
+
+## Project
+
+- [Source](https://github.com/nirholas/intel-mcp)
+- [npm](https://www.npmjs.com/package/@three-ws/intel-mcp)
+- [three.ws](https://three.ws): the platform this is part of
+- [Issues](https://github.com/nirholas/intel-mcp/issues)
+- [MCP Registry](https://registry.modelcontextprotocol.io/?q=io.github.nirholas%2Fintel-mcp)

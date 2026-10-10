@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@three-ws/intel-mcp: three.ws market intelligence from any AI agent</title>
+<meta name="description" content="three.ws market intelligence from any AI agent — smart-money scoring, wallet intel, signal feeds, KOL leaderboards/trades, and the copy-trade Smart Money directory. Read-only over the live public API. No key, no signer, no payment.">
+<link rel="canonical" href="https://nirholas.github.io/intel-mcp/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="three.ws">
+<meta property="og:title" content="@three-ws/intel-mcp">
+<meta property="og:description" content="three.ws market intelligence from any AI agent — smart-money scoring, wallet intel, signal feeds, KOL leaderboards/trades, and the copy-trade Smart Money directory. Read-only over the live public API. No key, no signer, no payment.">
+<meta property="og:url" content="https://nirholas.github.io/intel-mcp/">
+<meta property="og:image" content="https://nirholas.github.io/intel-mcp/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="@three-ws/intel-mcp">
+<meta name="twitter:description" content="three.ws market intelligence from any AI agent — smart-money scoring, wallet intel, signal feeds, KOL leaderboards/trades, and the copy-trade Smart Money directory. Read-only over the live public API. No key, no signer, no payment.">
+<meta name="twitter:image" content="https://nirholas.github.io/intel-mcp/og.png">
+<meta name="keywords" content="mcp, three.ws, solana, smart-money, signals, kol, copy-trading, intel, model-context-protocol, mcp-server, ai-agents">
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
+<link rel="icon" href="https://three.ws/three-ws-mcp-icon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"@three-ws/intel-mcp","description":"three.ws market intelligence from any AI agent — smart-money scoring, wallet intel, signal feeds, KOL leaderboards/trades, and the copy-trade Smart Money directory. Read-only over the live public API. No key, no signer, no payment.","codeRepository":"https://github.com/nirholas/intel-mcp","programmingLanguage":"JavaScript","license":"https://spdx.org/licenses/Apache-2.0.html","version":"0.1.3","url":"https://nirholas.github.io/intel-mcp/","author":{"@type":"Organization","name":"three.ws","url":"https://three.ws"},"keywords":"mcp, three.ws, solana, smart-money, signals, kol, copy-trading, intel, model-context-protocol, mcp-server, ai-agents"}</script>
+<style>:root{--bg:#fff;--fg:#111418;--mut:#586069;--line:#e3e6ea;--acc:#2563eb;--code:#f4f6f8;--card:#fafbfc}
+@media(prefers-color-scheme:dark){:root{--bg:#0b0d10;--fg:#e8eaed;--mut:#9aa3ad;--line:#232830;--acc:#6ea0ff;--code:#14181d;--card:#10141a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--acc)}a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:4px}
+header.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-weight:700;text-decoration:none;color:var(--fg)}
+.bar nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.bar nav a{color:var(--mut);text-decoration:none;transition:color .15s}.bar nav a:hover{color:var(--fg)}
+.hero{max-width:1100px;margin:0 auto;padding:48px 16px 24px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+.hero p{color:var(--mut);max-width:70ch;font-size:18px;margin:0 0 24px}
+.install{display:flex;align-items:center;gap:8px;max-width:620px;background:var(--code);border:1px solid var(--line);border-radius:10px;padding:6px 6px 6px 14px}
+.install code{flex:1;overflow-x:auto;white-space:nowrap;font:14px ui-monospace,SFMono-Regular,Menlo,monospace}
+.install button{border:0;background:var(--acc);color:#fff;border-radius:7px;padding:8px 14px;font:600 13px system-ui;cursor:pointer;transition:transform .12s,opacity .12s}
+.install button:hover{opacity:.9}.install button:active{transform:scale(.96)}
+.cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.cta a{padding:9px 16px;border:1px solid var(--line);border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;color:var(--fg);transition:border-color .15s,transform .15s}
+.cta a:hover{border-color:var(--acc);transform:translateY(-1px)}.cta a.pri{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.layout{max-width:1100px;margin:0 auto;padding:8px 16px 64px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:40px}
+@media(max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+.toc{position:sticky;top:76px;align-self:start;font-size:14px;border-left:1px solid var(--line);padding-left:16px}
+.toc p{margin:0 0 8px;font-weight:700;color:var(--mut);text-transform:uppercase;font-size:12px;letter-spacing:.06em}
+.toc ul{list-style:none;margin:0;padding:0}.toc li{margin:6px 0}.toc a{color:var(--mut);text-decoration:none}.toc a:hover{color:var(--fg)}
+main{min-width:0;overflow-wrap:anywhere}main pre code{overflow-wrap:normal}main img{max-width:100%;height:auto}
+main h2{margin-top:2.2em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+.anchor{margin-left:-1.1em;padding-right:.4em;text-decoration:none;opacity:0;color:var(--mut)}h2:hover .anchor,h3:hover .anchor,h4:hover .anchor{opacity:1}
+pre{background:var(--code);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;font-size:14px;line-height:1.5}
+code{font:0.9em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:.15em .35em;border-radius:5px}pre code{background:none;padding:0}
+table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%}th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}th{background:var(--card)}
+blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--line);color:var(--mut)}
+footer{border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+.foot-in{max-width:1100px;margin:0 auto;padding:24px 16px;display:flex;gap:16px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="https://nirholas.github.io/intel-mcp/">@three-ws/intel-mcp</a>
+<nav aria-label="Project links"><a href="https://github.com/nirholas/intel-mcp">GitHub</a><a href="https://www.npmjs.com/package/@three-ws/intel-mcp">npm</a><a href="llms.txt">llms.txt</a><a href="https://three.ws">three.ws</a></nav>
+</div></header>
+<section class="hero">
+<h1>@three-ws/intel-mcp</h1>
+<p>three.ws market intelligence from any AI agent — smart-money scoring, wallet intel, signal feeds, KOL leaderboards/trades, and the copy-trade Smart Money directory. Read-only over the live public API. No key, no signer, no payment.</p>
+<div class="install" role="group" aria-label="Install command"><code>npx -y @three-ws/intel-mcp</code><button type="button" data-copy="npx -y @three-ws/intel-mcp">Copy</button></div>
+<div class="cta"><a class="pri" href="https://github.com/nirholas/intel-mcp">View on GitHub</a><a href="https://github.com/nirholas/intel-mcp/stargazers">Star the repo</a><a href="https://registry.modelcontextprotocol.io/?q=io.github.nirholas%2Fintel-mcp">MCP Registry</a></div>
+</section>
+<div class="layout">
+<main id="content"><p align="center"><strong>Read the market the way the smart money does — smart-money scoring, wallet intel, signal feeds, KOL trades, and the copy-trade directory, from any AI agent.</strong></p><p align="center">
+  <a href="https://www.npmjs.com/package/@three-ws/intel-mcp"><img alt="npm" src="https://img.shields.io/npm/v/@three-ws/intel-mcp?logo=npm&color=cb3837"></a>
+  <img alt="license" src="https://img.shields.io/npm/l/@three-ws/intel-mcp?color=3b82f6">
+  <img alt="node" src="https://img.shields.io/node/v/@three-ws/intel-mcp?color=339933&logo=node.js">
+  <a href="https://registry.modelcontextprotocol.io/?q=io.github.nirholas"><img alt="MCP Registry" src="https://img.shields.io/badge/MCP%20Registry-io.github.nirholas-0ea5e9"></a>
+  <a href="https://three.ws"><img alt="three.ws" src="https://img.shields.io/badge/built%20by-three.ws-000"></a>
+</p><hr>
+<blockquote>
+<p>A <a href="https://modelcontextprotocol.io">Model Context Protocol</a> server that gives any AI assistant the three.ws <strong>market-intelligence</strong> surface over stdio. Judge a coin by <em>who</em> is buying it, pull a wallet&#39;s realized reputation, read a signal feed&#39;s proven accuracy, rank KOL traders, and browse the copy-trade Smart Money directory — all live, read-only, no key required.</p>
+</blockquote>
+<p>Every score, signal, and ranking comes straight from the public three.ws API. No API key, no signer, no payment — point <code>THREE_WS_BASE</code> at a deployment and go.</p>
+<h2 id="install"><a class="anchor" href="#install" aria-label="Link to this section">#</a>Install</h2>
+<pre><code class="language-bash">npm install @three-ws/intel-mcp
+</code></pre>
+<p>Or run with <code>npx</code> (no install):</p>
+<pre><code class="language-bash">npx @three-ws/intel-mcp
+</code></pre>
+<h2 id="quick-start"><a class="anchor" href="#quick-start" aria-label="Link to this section">#</a>Quick start</h2>
+<p><strong>Claude Code</strong>, one line:</p>
+<pre><code class="language-bash">claude mcp add intel -- npx -y @three-ws/intel-mcp
+</code></pre>
+<p><strong>Claude Desktop / Cursor</strong> (<code>claude_desktop_config.json</code> or <code>mcp.json</code>):</p>
+<pre><code class="language-json">{
+	&quot;mcpServers&quot;: {
+		&quot;intel&quot;: {
+			&quot;command&quot;: &quot;npx&quot;,
+			&quot;args&quot;: [&quot;-y&quot;, &quot;@three-ws/intel-mcp&quot;]
+		}
+	}
+}
+</code></pre>
+<p>Inspect the surface with the MCP Inspector:</p>
+<pre><code class="language-bash">npx -y @modelcontextprotocol/inspector npx @three-ws/intel-mcp
+</code></pre>
+<h2 id="tools"><a class="anchor" href="#tools" aria-label="Link to this section">#</a>Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Type</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>smart_money_coin</code></td>
+<td>read-only</td>
+<td>Score a coin by WHO is net-buying it — 0–100 smart-money score, reputable buyers, funder clusters, sybil flag.</td>
+</tr>
+<tr>
+<td><code>wallet_intel</code></td>
+<td>read-only</td>
+<td>One wallet&#39;s realized reputation: score, win rate, behavioral labels, and its funder cluster.</td>
+</tr>
+<tr>
+<td><code>signal_feed</code></td>
+<td>read-only</td>
+<td>A signal feed&#39;s proven accuracy (hit-rate, realized/follower ROI) and recent emissions with on-chain proof.</td>
+</tr>
+<tr>
+<td><code>kol_leaderboard</code></td>
+<td>read-only</td>
+<td>Rank tracked KOL traders by realized P&amp;L over a 7d / 30d window.</td>
+</tr>
+<tr>
+<td><code>kol_trades</code></td>
+<td>read-only</td>
+<td>Recent KOL trades on a specific mint, across the tracked KOL set.</td>
+</tr>
+<tr>
+<td><code>copy_smart_wallets</code></td>
+<td>read-only</td>
+<td>Browse the ranked copy-trade Smart Money directory — filter by chain, category, and sort.</td>
+</tr>
+</tbody></table>
+<p>All six tools read live data: scores, feeds, and rankings move between calls, so none are idempotent.</p>
+<h3 id="input-parameters"><a class="anchor" href="#input-parameters" aria-label="Link to this section">#</a>Input parameters</h3>
+<p><strong><code>smart_money_coin</code></strong> — <code>mint</code> (required), <code>network</code> (<code>mainnet</code> | <code>devnet</code>, default <code>mainnet</code>).</p>
+<p><strong><code>wallet_intel</code></strong> — <code>wallet</code> (required), <code>network</code> (<code>mainnet</code> | <code>devnet</code>, default <code>mainnet</code>).</p>
+<p><strong><code>signal_feed</code></strong> — <code>slug</code> (required), <code>network</code> (<code>mainnet</code> | <code>devnet</code>, default <code>mainnet</code>).</p>
+<p><strong><code>kol_leaderboard</code></strong> — <code>window</code> (<code>7d</code> | <code>30d</code>, default <code>7d</code>), <code>limit</code> (1–100, default 25).</p>
+<p><strong><code>kol_trades</code></strong> — <code>mint</code> (required), <code>limit</code> (1–100, default 20).</p>
+<p><strong><code>copy_smart_wallets</code></strong> — <code>chain</code> (<code>sol</code> | <code>bsc</code>), <code>category</code> (<code>smart_money</code> | <code>launchpad</code> | <code>kol</code> | <code>sniper</code>), <code>sort</code> (<code>profit</code> | <code>pnl</code> | <code>winrate</code> | <code>followers</code> | <code>score</code>, default <code>score</code>), <code>q</code> (text), <code>limit</code> (1–100, default 30), <code>offset</code> (default 0).</p>
+<h2 id="example"><a class="anchor" href="#example" aria-label="Link to this section">#</a>Example</h2>
+<pre><code class="language-jsonc">// copy_smart_wallets
+&gt; { &quot;chain&quot;: &quot;sol&quot;, &quot;sort&quot;: &quot;winrate&quot;, &quot;limit&quot;: 3 }
+{
+  &quot;ok&quot;: true,
+  &quot;count&quot;: 3,
+  &quot;total&quot;: 412,
+  &quot;offset&quot;: 0,
+  &quot;limit&quot;: 3,
+  &quot;has_more&quot;: true,
+  &quot;facets&quot;: { &quot;byChain&quot;: { &quot;sol&quot;: 300, &quot;bsc&quot;: 112 }, &quot;byCategory&quot;: { &quot;smart_money&quot;: 180, &quot;kol&quot;: 90 } },
+  &quot;wallets&quot;: [
+    { &quot;address&quot;: &quot;…&quot;, &quot;chain&quot;: &quot;sol&quot;, &quot;categories&quot;: [&quot;smart_money&quot;], &quot;score&quot;: 94, &quot;win_rate_30d&quot;: 0.71, &quot;realized_profit_30d_usd&quot;: 182000, &quot;follow_count&quot;: 1240 }
+  ]
+}
+</code></pre>
+<pre><code class="language-jsonc">// smart_money_coin
+&gt; { &quot;mint&quot;: &quot;FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump&quot; }
+{
+  &quot;ok&quot;: true,
+  &quot;mint&quot;: &quot;FeMbDoX7R1Psc4GEcvJdsbNbZA3bfztcyDCatJVJpump&quot;,
+  &quot;network&quot;: &quot;mainnet&quot;,
+  &quot;computed&quot;: true,
+  &quot;smart_money_score&quot;: 78,
+  &quot;reputable_buyers&quot;: 12,
+  &quot;sybil_flag&quot;: false,
+  &quot;sybil_share&quot;: 0.18,
+  &quot;wallets&quot;: [ /* reputable buyers with realized_score, win_rate, labels */ ],
+  &quot;clusters&quot;: [ /* funder clusters in the book */ ]
+}
+</code></pre>
+<p><code>computed: false</code> on a coin or wallet means the smart-money graph has no on-chain history for it yet — that&#39;s an honest &quot;not enough data&quot;, not a failure.</p>
+<h2 id="requirements"><a class="anchor" href="#requirements" aria-label="Link to this section">#</a>Requirements</h2>
+<ul>
+<li><strong>Node.js &gt;= 20.</strong></li>
+<li>Network access to <code>https://three.ws</code> (or your own <code>THREE_WS_BASE</code>).</li>
+</ul>
+<h3 id="environment-variables"><a class="anchor" href="#environment-variables" aria-label="Link to this section">#</a>Environment variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Required</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>THREE_WS_BASE</code></td>
+<td>no</td>
+<td><code>https://three.ws</code></td>
+</tr>
+<tr>
+<td><code>THREE_WS_TIMEOUT_MS</code></td>
+<td>no</td>
+<td><code>20000</code></td>
+</tr>
+</tbody></table>
+<h2 id="links"><a class="anchor" href="#links" aria-label="Link to this section">#</a>Links</h2>
+<ul>
+<li>Homepage: <a href="https://three.ws">https://three.ws</a></li>
+<li>Changelog: <a href="https://three.ws/changelog">https://three.ws/changelog</a></li>
+<li>Issues: <a href="https://github.com/nirholas/three.ws/issues">https://github.com/nirholas/three.ws/issues</a></li>
+<li>License: Apache-2.0, see <a href="https://github.com/nirholas/intel-mcp/blob/main/LICENSE">LICENSE</a></li>
+</ul>
+<hr>
+<p align="center">
+  <sub>
+    Part of the <a href="https://three.ws">three.ws</a> SDK suite — 3D AI agents, on-chain identity, and agent payments.<br/>
+    <a href="https://three.ws">Website</a> · <a href="https://three.ws/changelog">Changelog</a> · <a href="https://github.com/nirholas/three.ws">GitHub</a>
+  </sub>
+</p>
+</main>
+<nav class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#install">Install</a></li><li><a href="#quick-start">Quick start</a></li><li><a href="#tools">Tools</a></li><li><a href="#example">Example</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#links">Links</a></li></ul></nav>
+</div>
+<footer><div class="foot-in"><span>Apache-2.0 licensed</span><a href="https://github.com/nirholas/intel-mcp/issues">Issues</a><a href="https://github.com/nirholas/intel-mcp/blob/main/CONTRIBUTING.md">Contributing</a><a href="https://github.com/nirholas/intel-mcp/security/policy">Security</a><a href="https://three.ws">Part of three.ws</a></div></footer>
+<script>document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+var t=b.getAttribute('data-copy');var done=function(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()}})});</script>
+</body>
+</html>
