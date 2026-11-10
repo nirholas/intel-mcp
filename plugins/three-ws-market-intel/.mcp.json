@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "intel": {
+      "command": "npx",
+      "args": ["-y", "@three-ws/intel-mcp"]
+    }
+  }
+}
